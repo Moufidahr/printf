@@ -1,4 +1,5 @@
 0x11. C - print
 
-Moufida
+Contributor: [moufida](https://github.com/Moufidahr)
+
 Contributor: [Mina](https://github.com/minamkamal)
