@@ -53,15 +53,36 @@ void int_to_str(int n, char *s)
  */
 void print_int(va_list *args)
 {
-	int i = va_arg(*args, int);
-	int len;
-	char s[20];
+	int n = va_arg(*args, int);
+	char buffer[11];
+	int i = 0;
 
-	int_to_str(i, s);
-	len = strlen(s);
-	write(1, s, len);
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return;
+	}
+	if (n < 0)
+	{
+		buffer[i++] = '-';
+		n = -n;
+	}
+	int temp = n;
+	int len = 0;
+
+	while (temp > 0)
+	{
+		temp /= 10;
+		len++;
+	}
+	i += len - 1;
+	while (n > 0)
+	{
+		buffer[i--] = (n % 10) + '0';
+		n /= 10;
+	}
+	write(1, buffer, len);
 }
-
 
 /**
  * print_string - Entry point
