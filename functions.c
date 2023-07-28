@@ -67,8 +67,9 @@ void print_int(va_list *args)
 		buffer[i++] = '-';
 		n = -n;
 	}
+        
 	int temp = n;
-	int len = 0;
+        int len = 0;
 
 	while (temp > 0)
 	{
