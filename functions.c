@@ -61,3 +61,20 @@ void print_int(va_list *args)
 	len = strlen(s);
 	write(1, s, len);
 }
+
+
+/**
+ * print_string - Entry point
+ *
+ * Description: 'string and store in array
+ *
+ * @args: parameter
+ *
+ * Return: Always 0 (Success)
+ */
+void print_string(va_list *args)
+{
+	char *str = va_arg(*args, char *);
+
+	write(1, str, strlen(str));
+}

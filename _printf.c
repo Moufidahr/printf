@@ -45,6 +45,11 @@ int _printf(const char *format, ...)
 			print_int(&args);
 			count++;
 		}
+		else if (c == 's')
+                {
+			print_string(&args);
+			count++;
+                }
 		else
 		{
 			write(1, p, 1);
